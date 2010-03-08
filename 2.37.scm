@@ -119,27 +119,3 @@
 		  row
 		  (car l))
 	      (f row (+ now 1) (cdr l))))))
-
-
-;  (let* ((sw (< i j))
-;	 (row (v-+-v (scalar-*-v n (getRow (if sw j i) l))
-;		     (getRow (if sw i j) l))))
-;    (let f ((now 1)
-;	    (l l))
-;      (if (null? l)
-;	  '()
-;	  (cons (if (= now (if sw i j))
-;		    row
-;		    (car l))
-;		(f (+ now 1) (cdr l)))))))
-
-;  (let f ((row (v-+-v (scalar-*-v n (getRow (if (< i j) j i) l))
-;		      (getRow (if (< i j) i j) l)))
-;	  (now 1)
-;	  (l l))
-;    (if (null? l)
-;	'()
-;	(cons (if (= now (if (< i j) i j))
-;		  row
-;		  (car l))
-;	      (f row (+ now 1) (cdr l))))))
