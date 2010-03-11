@@ -196,4 +196,39 @@
        '((1 0 0) (1/2 1 0) (0 0 1))
        (F-i-j-lambda 2 1 1/2 '((1 0 0) (0 1 0) (0 0 1))))
 
+(test-section "inverse")
+(test* "Middle"
+       '((1 0) (3 2))
+       (F-i-lambda 1 
+		   -1/5 
+		   (F-i-j-lambda 1 
+				 2 
+				 -3 
+				 (F-i-lambda 1 
+					     2 
+					     '((2 3) (3 2)))))
+       )
+
+(test* "full"
+       '((1 0) (0 1))
+       (F-i-lambda
+	2
+	1/2
+	(F-i-j-lambda 
+	 2
+	 1 
+	 -3
+	 (F-i-lambda 
+	  1 
+	  -1/5 
+	  (F-i-j-lambda 
+	   1 
+	   2 
+	   -3 
+	   (F-i-lambda 
+	    1 
+	    2 
+	    '((2 3) (3 2)))))))
+       )
+
 (test-end)
